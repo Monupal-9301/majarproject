@@ -1,0 +1,78 @@
+<% layout("layouts/boilerplate") %>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+
+    
+    <h2>Create new listing:</h2>
+    <br>
+    <form method="post"  action="/listing" class="needs-validation" enctype="multipart/form-data" novalidate>
+    <div class="mb-3">
+        <label for="title" class="form-label"> Title</label>
+        <input type="text" placeholder="enter title" name="listing[title]" class="form-control" id="title" required>
+        <div class="valid-feedback">
+            looks good!
+        </div>
+
+
+    </div>
+    <div>
+        <label for="description" class="form-label"> Description</label>
+    <textarea name="listing[description]" placeholder="enter your description" id="" class="form-control" required></textarea>
+    <div class="invalid-feedback ">
+        please enter short description
+        
+    </div>
+    <div class="valid-feedback">
+        looks good!
+    </div>
+
+    </div>
+
+    <div>
+        <label for="image" class="form-label"> image</label>
+        <input type="file" name="listing[image]" class="form-control" required>
+    </div>
+
+    <div class="row">
+        <div class="col-5">
+            <label for="number" class="form-label">Price</label>
+           <input type="number"  placeholder="enter price" name="listing[price]" class="form-control" required>
+           
+           <div class="invalid-feedback">
+            price should be valid
+           </div>
+           </div>
+    
+        
+        <div class="col-7">
+            <label for="location" class="form-label">Location</label>
+        <input type="text" placeholder="enter location" name="listing[location]" class="form-control" required>
+        <div class="invalid-feedback">
+            Location should be valid
+           </div>
+    
+        </div>
+
+    </div>
+    <br>
+    
+    
+
+    <div>
+        <label for="country" class="form-label" >Country</label>
+    <input type="text" placeholder="enter country" name="listing[country]" class="form-control" required>
+    <div class="invalid-feedback">
+        Country should be valid
+       </div>
+    </div>
+    
+    <br><br>
+    <button class="btn btn-dark">submit</button>
+    
+
+    </form>
+    </div>
+    </div>
+    
+</body>

@@ -1,0 +1,81 @@
+<% layout("layouts/boilerplate") %>
+
+<body>
+  
+  <div class="row">
+    <div class="col-8 offset-2">
+    <h3>Edit Listing</h3>
+    <form method="post" action="/listing/<%= data._id %>?_method=patch" novalidate class="needs-validation" enctype="multipart/form-data">
+      <div>
+        <label for="title" class="from-label">Title</label>
+      <input type="text" name="listing[title]" value="<%= data.title %>" class="form-control" required> 
+      <div class="invalid-feedback">Title must be required</div>
+
+      </div>
+      <div>
+        <label for="description" class="form-label">Description</label> 
+        <textarea name="listing[description]" id="" class="form-control" required><%= data.description %></textarea>
+        <div class="invalid-feedback ">
+          please enter short description
+        </div>
+      </div>
+      <br>
+      <div>
+        <p>Original Image</p>
+        <img src="<%= newurl %>" alt="" style="border-radius: 3px" height="150px" width="200px">
+      </div>
+      <br>
+      <div>
+        <label for="image" class="form-label">Image</label>
+       <input type="file" name="listing[image]" class="form-control">
+
+      </div>
+      
+    
+    
+    <div class="row ">
+      <div class="col-5">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" value="<%= data.price %>" class="form-control" name="listing[price]" required>
+        <div class="invalid-feedback">
+          price should be valid
+         </div>
+      </div>
+
+      
+      <div class="col-7">
+        <label for="location" class="form-label">Location</label>
+        <input type="text" name="listing[location]" value="<%= data.location %>" class="form-control" required>
+        <div class="invalid-feedback">
+          Location should be valid
+         </div>
+      </div>
+
+   
+
+    </div>
+    <div>
+      <label for="country" class="form-label"> Country</label>
+      <input type="text" name="listing[country]" value="<%= data.country %>" class="form-control" required>
+      <div class="invalid-feedback">
+        Country should be valid
+       </div>
+
+    </div>
+    <br>
+    
+   
+    
+    <button class="btn btn-dark">submit</button>
+
+    </form>
+    </div>
+    </div>
+    <script src="/js/validation.js"></script>
+      
+    </body>
+    
+    
+
+    
+
