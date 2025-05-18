@@ -45,7 +45,8 @@ const listingdata=require("./routes/listing.js");
 const reviewrouter=require("./routes/reviewroute.js");
 const userrouter=require("./routes/user.js");
 
-const Atlus_db=process.env.ATLASDB_URL;
+// const Atlus_db=process.env.ATLASDB_URL;
+const Atlus_db="mongodb://127.0.0.1:27017/wanderlust";
 
 main().then(()=>{
     console.log("mongoose connected");
@@ -118,9 +119,9 @@ app.use("/listing",listingdata);
 
 app.use("/listing/:id/reviews",reviewrouter);
 app.use("/",userrouter);
-// app.all(/.*/,(req,res,next)=>{
-//     next(new expressError(404,"page not found"));
-// });
+app.all(/.*/,(req,res,next)=>{
+    next(new expressError(404,"page not found"));
+});
 
 app.use((err,req,res,next)=>{
     let{statuscode=500,message="some error"}=err;
