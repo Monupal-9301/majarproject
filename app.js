@@ -45,8 +45,8 @@ const listingdata=require("./routes/listing.js");
 const reviewrouter=require("./routes/reviewroute.js");
 const userrouter=require("./routes/user.js");
 
-// const Atlus_db=process.env.ATLASDB_URL;
-const Atlus_db="mongodb://127.0.0.1:27017/wanderlust";
+const Atlus_db=process.env.ATLASDB_URL;
+
 
 main().then(()=>{
     console.log("mongoose connected");
