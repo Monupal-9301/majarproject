@@ -10,6 +10,7 @@ const app=express();
 let port=8080;
 const mongoose=require("mongoose");
 const methodOverride = require('method-override');
+const expressError=require("./utils/expressError.js")
 const session = require('express-session');
 const MongoStore=require("connect-mongo");
 const flash = require('connect-flash');
@@ -82,7 +83,7 @@ const sessionoption={
 
     }
 }
-store.on("error",()=>{
+store.on("error",(err)=>{
     console.log("error in mongodb session",err);
     
 })
