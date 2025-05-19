@@ -16,10 +16,14 @@ body{
     color: #fe424d;
     font-size: 2rem;
  }
- .nav-link a{
-    color: #222222 !important;
+ .nav-link {
+    color:black!important;
+    opacity: 0.7;
     
     
+ }
+ .nav-link:hover{
+   opacity: 1;
  }
  
  .f-info a{
@@ -98,7 +102,7 @@ body{
 .nav-link1{
    text-decoration: none !important;
    padding-right: 5px;
-   color: #222222;
+   color:black;
    opacity: 0.8;
 }
 .nav-link1:hover{
@@ -121,6 +125,50 @@ body{
 }
 .filter p{
    font-size: 0.8rem;
+}
+ #search-btn1{
+    display: none;
+    margin-top: 0.8rem !important;
+    
+  }
+@media screen and (max-width:430px) {
+   .listing-card{
+      margin-left: 3rem;
+   }
+   .switch-box{
+      margin-left: 1rem;
+   }
+   #search2{
+      display: none;
+   }
+   #search-btn1{
+      display:inline ;
+      height: 4rem;
+      width: 10rem;
+      margin: 0px;
+      margin-right: 6rem;
+      
+   }
+   .navbar-collapse{
+    background-color: rgba(0, 0, 0);
+    border-radius: 0.6rem;
+    
+    
+    
+  }
+  .nav-link{
+   color:white !important;
+   margin-left: 2rem;
+  }
+  .nav-link1{
+   color: white;
+  }
+  .login-nav .nav-link1{
+   margin-left: 2rem;
+   margin-bottom: 2rem !important;
+  }
+   
+
 }
 
 
