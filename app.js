@@ -139,7 +139,8 @@ app.use((err,req,res,next)=>{
     res.status(statuscode).render("./listing/err", {message});
     
     // res.status(statuscode).send(message);
-    next(err);
+    next()
+    
 });
 app.listen(port,()=>{
     console.log(`listing on port ${port}`)
