@@ -47,6 +47,7 @@ const reviewrouter=require("./routes/reviewroute.js");
 const userrouter=require("./routes/user.js");
 
 const Atlus_db=process.env.ATLASDB_URL;
+// const Atlus_db='mongodb://127.0.0.1:27017/wanderlust';
 
 
 main().then(()=>{
@@ -58,8 +59,15 @@ main().then(()=>{
     
 })
 async function main(){
-    await mongoose.connect(Atlus_db)
-
+    try{
+        console.log("Connecting to MongoDB...");
+        await mongoose.connect(Atlus_db);
+        console.log("Mongoose connected");
+    } catch (err) {
+        console.error("MongoDB connection failed:");
+        console.error(err);
+    }
+    
 }
 const store=MongoStore.create({
     mongoUrl:Atlus_db,
