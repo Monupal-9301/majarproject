@@ -9,6 +9,22 @@ const listingschema= new Schema({
         type:String,
         required:true
     },
+    category:{
+       type:String,
+       enum:[
+        "Trending",
+        "Rooms",
+        "Iconic city",
+        "Mountains",
+        "Castles",
+        "Amazing pools",
+        "Camping",
+        "Farms",
+        "Arctic",
+        "Domes",
+        "School"
+       ]
+    },
     description:{
         type:String
     },
