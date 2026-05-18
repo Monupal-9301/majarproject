@@ -23,7 +23,8 @@ const listingschema= new Schema({
         "Arctic",
         "Domes",
         "School"
-       ]
+       ],
+       default:"Trending"
     },
     description:{
         type:String
