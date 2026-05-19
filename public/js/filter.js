@@ -25,6 +25,15 @@
     const listingContainer = document.getElementById("listing-container");
 
     const searchInputs = document.querySelectorAll(".search-input");
+    const searchForms = document.querySelectorAll(".search-form");
+
+    if (searchForms.length) {
+        searchForms.forEach((form) => {
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+            });
+        });
+    }
 
     let selectedCategory = "";
     let searchValue = "";
@@ -82,7 +91,7 @@
 
         data.forEach((datas) => {
             listingContainer.innerHTML += `
-                <div class="col>
+                <div class="col">
                 <a href="/listing/${datas._id}" class="text-link">
                     <div class="card listing-card" style="width: 17rem;">
                         <img src="${datas.image.url}" class="card-main-img-top" alt="listing image">
