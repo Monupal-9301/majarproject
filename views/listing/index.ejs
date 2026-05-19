@@ -74,37 +74,24 @@
     
     <div id="listing-container" class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 mt-4">
         <% for( let datas of data) { %>
+            <div class="col">
             <a href="/listing/<%= datas._id %>" class="text-link">
                 <div class="card listing-card" style="width: 17rem;">
                     <img src="<%= datas.image.url %>" class="card-main-img-top " alt="...">
                     <div class="card-img-overlay"></div>
                     <div class="card-body">
-                    <b class="card-text"><%= datas.title %></b>
+                     <b class="card-text"><%= datas.title %></b>
                       
-                    <p class="card-price"> &#x20B9;<%= datas.price.toLocaleString("en-IN") %>/night  <i class="taxinfo"> &nbsp; &nbsp; +18 GST</i></p>
+                     <p class="card-price"> &#x20B9;<%= datas.price.toLocaleString("en-IN") %>/night  <i class="taxinfo"> &nbsp; &nbsp; +18 GST</i></p>
                     
                     </div>
-                  </div>
-                  <br>
+                </div>
+                <br>
             </a>
+            </div>
+
             
             <% } %>
 
     </div>
 </body>
-<script>
-    const swhbtn= document.getElementById("switch-btn");
-    swhbtn.addEventListener("click",()=>{
-        let taxinfo=document.getElementsByClassName("taxinfo");
-        for(taxsinfo of taxinfo){
-            if(taxsinfo.style.display !="inline"){
-                taxsinfo.style.display="inline";
-            }
-            else{
-                taxsinfo.style.display="none";
-            }
-            
-        }
-    })
-    
-</script>
