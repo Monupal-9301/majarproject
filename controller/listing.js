@@ -5,15 +5,68 @@ module.exports.alllisting=async(req,res)=>{
     let data= await listing.find();
     res.render("listing/index.ejs",{data});
 };
-module.exports.filterListing = async(req,res)=>{
+module.exports.filterListing = async (req, res, next) => {
 
-    let { category } = req.query;
+    try {
 
-    const filteredListings = await listing.find({
-        category: category
-    });
+        let { category, search } = req.query;
 
-    res.json(filteredListings);
+        let query = {};
+
+        if (category?.trim()) {
+            query.category = category;
+        }
+
+        if (search?.trim()) {
+
+            query.$or = [
+
+                {
+                    title: {
+                        $regex: search,
+                        $options: "i"
+                    }
+                },
+
+                {
+                    category: {
+                        $regex: search,
+                        $options: "i"
+                    }
+                },
+
+                {
+                    location: {
+                        $regex: search,
+                        $options: "i"
+                    }
+                },
+
+                {
+                    country: {
+                        $regex: search,
+                        $options: "i"
+                    }
+                },
+
+                {
+                    description: {
+                        $regex: search,
+                        $options: "i"
+                    }
+                }
+            ];
+        }
+
+        const filteredListings = await listing.find(query);
+
+        res.json(filteredListings);
+
+    }
+    catch (err) {
+
+        next(err);
+    }
 };
 module.exports.getlisting=async(req,res)=>{
     res.render("listing/new.ejs");
