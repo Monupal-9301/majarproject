@@ -28,7 +28,9 @@
 
         filters.forEach((filter)=>{
 
-            filter.addEventListener("click", async()=>{
+            filter.addEventListener("click", async(event)=>{
+
+                event.preventDefault();
 
                 const category = filter.dataset.category;
 
