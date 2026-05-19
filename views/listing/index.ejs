@@ -15,49 +15,49 @@
 </style>
 <body>
     <div class="filters">
-        <div class="filter">
+        <div class="filter" data-category="Trending">
             <div><i class="fa-solid fa-fire"></i></div>
             <p>Trending</p>
         </div>
-        <div class="filter">
+        <div class="filter" data-category="Rooms">
             <div><i class="fa-solid fa-bed"></i></div>
             <p>Rooms</p>
         </div>
-        <div class="filter">
+        <div class="filter" data-category="Iconic city">
             <div><i class="fa-solid fa-mountain-city"></i></div>
             <p>Iconic city</p>
         </div>
-        <div class="filter">
+        <div class="filter" data-category="Mountains">
             <div><i class="fa-solid fa-mountain"></i></div>
             <p>Mountains</p>
         </div>
-        <div class="filter">
+        <div class="filter" data-category="Castles">
             <div><i class="fa-brands fa-fort-awesome"></i></div>
             <p>Castles</p>
         </div>
-        <div class="filter">
+        <div class="filter" data-category="Amazing pools">
             <div><i class="fa-solid fa-person-swimming"></i></div>
-            <p>amazing pools</p>
+            <p>Amazing pools</p>
         </div>
-        <div class="filter">
+        <div class="filter" data-category="Camping">
             <div><i class="fa-solid fa-tent"></i></div>
-            <p>camping</p>
+            <p>Camping</p>
         </div>
-        <div class="filter">
+        <div class="filter" data-category="Farms">
             <div><i class="fa-solid fa-tractor"></i></div>
             <p>Farms</p>
         </div>
-        <div class="filter">
+        <div class="filter" data-category="Arctic">
             <div><i class="fa-solid fa-snowflake"></i></div>
             <p>Arctic</p>
         </div>
-        <div class="filter">
+        <div class="filter" data-category="Domes">
             <div><i class="fa-solid fa-igloo"></i></div>
-            <p>doms</p>
+            <p>Domes</p>
         </div>
-        <div class="filter">
+        <div class="filter" data-category="School">
             <div><i class="fa-solid fa-school"></i></div>
-            <p>school</p>
+            <p>School</p>
         </div>
         <div class="switch-box">
             <div class="form-check form-switch form-check-reverse" id="switch-btn">
@@ -72,7 +72,7 @@
         
     
     
-    <div class="row  row-cols-lg-4 row-cols-md-2 row-cols-sm-1 mt-4">
+    <div id="listing-container" class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 mt-4">
         <% for( let datas of data) { %>
             <a href="/listing/<%= datas._id %>" class="text-link">
                 <div class="card listing-card" style="width: 17rem;">

@@ -19,6 +19,7 @@ router.route("/")
 // .post(upload.single("listing[image]"),(req,res)=>{
 //     res.send(req.file);
 // })
+router.get("/filter/data",wrapAsynsc(listingcontroller.filterListing));
 router.get("/new",islogin,wrapAsynsc(listingcontroller.getlisting));
 router.route("/:id")
 .get(wrapAsynsc(listingcontroller.showlisting))

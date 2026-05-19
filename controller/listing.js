@@ -5,6 +5,16 @@ module.exports.alllisting=async(req,res)=>{
     let data= await listing.find();
     res.render("listing/index.ejs",{data});
 };
+module.exports.filterListing = async(req,res)=>{
+
+    let { category } = req.query;
+
+    const filteredListings = await listing.find({
+        category: category
+    });
+
+    res.json(filteredListings);
+};
 module.exports.getlisting=async(req,res)=>{
     res.render("listing/new.ejs");
 }
